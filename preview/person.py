@@ -11,10 +11,14 @@ class Person:
     def giveRaise(self, percent):
         self.pay *= (1.0 + percent)
 
+    def __str__(self):
+        return '<%s => %s>' % (self.__class__.__name__,self.name)
+
 if __name__ == '__main__':
     bob = Person('Bob Smith', 42, 3000, 'software')
     sue = Person('Sue Jones', 45, 4000, 'hardware')
     print(bob.name, sue.pay)
+    print(bob)
 
     print(bob.lastName())
     sue.giveRaise(.10)
